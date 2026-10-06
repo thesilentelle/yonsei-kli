@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="4급 Korean grammar and vocabulary study guide in English, Japanese, Chinese and Turkish.">
+<title>4급 1권 Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+SC:wght@400;500&display=swap">
+<style>
+/* Layout: sticky chapter rail on top, single reading column; grammar cards then a two-column vocab list per unit */
+:root{
+  --bg:#F4F6F8; --surface:#FFFFFF; --ink:#18202B; --muted:#5B6676; --line:#DCE1E7;
+  --accent:#23606A; --accent-soft:#E2EDEE; --mark:#F6E1A0; --mark-ink:#18202B;
+  --display:"Gowun Batang","Nanum Myeongjo",Georgia,serif;
+  --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --r:10px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#10151B; --surface:#18202A; --ink:#E6EBF0; --muted:#9AA6B3; --line:#29333F;
+  --accent:#73BCC6; --accent-soft:#1B3036; --mark:#5B4B1E; --mark-ink:#FBF0CC; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10151B; --surface:#18202A; --ink:#E6EBF0; --muted:#9AA6B3; --line:#29333F;
+  --accent:#73BCC6; --accent-soft:#1B3036; --mark:#5B4B1E; --mark-ink:#FBF0CC; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.65;margin:0}
+.wrap{max-width:880px;margin:0 auto;padding-inline:16px}
+
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;flex-direction:column;gap:10px;padding-block:12px}
+.brand{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand h1{font-family:var(--display);font-size:1.25rem;margin:0;letter-spacing:-.01em}
+.brand span{color:var(--muted);font-size:.8rem}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.search{flex:1 1 220px;min-width:0;position:relative}
+.search input{width:100%;font:inherit;font-size:.9rem;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.search input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.toggle{font:inherit;font-size:.85rem;font-weight:500;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap}
+.toggle[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.toggle:focus-visible,.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;font:inherit;font-size:.82rem;font-weight:500;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;font-variant-numeric:tabular-nums}
+.chip b{color:var(--ink);font-weight:600}
+.chip[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chip[aria-selected="true"] b{color:var(--bg)}
+
+/* chapter */
+main{padding-block:28px 64px}
+.ch-head{display:flex;flex-direction:column;gap:2px;margin-bottom:24px}
+.ch-head .num{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.ch-head h2{font-family:var(--display);font-size:2rem;line-height:1.2;margin:0;text-wrap:balance}
+.ch-head p{margin:0;color:var(--muted)}
+.unit{margin-top:36px}
+.unit-head{display:flex;align-items:baseline;gap:10px;padding-bottom:8px;border-bottom:2px solid var(--ink);margin-bottom:18px}
+.unit-head .u{font-size:.78rem;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
+.unit-head h3{font-family:var(--display);font-size:1.35rem;margin:0}
+.sec-label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:26px 0 10px}
+
+/* grammar */
+.gcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);margin-bottom:14px}
+.gcard summary{list-style:none;cursor:pointer;padding:16px 18px;display:flex;flex-direction:column;gap:2px}
+.gcard summary::-webkit-details-marker{display:none}
+.gcard summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:var(--r)}
+.gform{font-family:var(--display);font-size:1.45rem;color:var(--accent);line-height:1.3;display:flex;justify-content:space-between;gap:12px}
+.gform::after{content:"+";font-family:var(--body);font-size:1.2rem;color:var(--muted)}
+.gcard[open] .gform::after{content:"−"}
+.ggloss{color:var(--muted);font-size:.92rem}
+.gbody{padding:0 18px 18px;display:flex;flex-direction:column;gap:16px}
+.core{margin:0;max-width:68ch}
+.forms{overflow-x:auto}
+.forms table{border-collapse:collapse;width:100%;font-size:.9rem}
+.forms td{padding:7px 10px;border-top:1px solid var(--line);vertical-align:top}
+.forms td:first-child{color:var(--muted);white-space:nowrap;padding-left:0;width:1%}
+.rules{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px;max-width:70ch}
+.rules li::marker{color:var(--accent)}
+.rules b,.vnote b{font-weight:600}
+.exs{display:flex;flex-direction:column;gap:10px;background:var(--accent-soft);border-radius:8px;padding:12px 14px}
+.ex .ko{font-weight:500}
+.ex .en,.v .en,.ex-en{color:var(--muted);font-size:.88rem}
+mark{background:var(--mark);color:var(--mark-ink);padding:0 2px;border-radius:3px}
+
+/* vocab */
+.vlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr));gap:10px}
+.v{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.vtop{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.vw{font-size:1.08rem;font-weight:600}
+.vnote{font-size:.86rem;margin:0}
+.vex{border-left:2px solid var(--accent);padding-left:10px;font-size:.92rem}
+.tag{font-size:.7rem;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 5px}
+
+/* quiz mode */
+body.quiz .en{filter:blur(5px);cursor:pointer;user-select:none;transition:filter .15s}
+body.quiz .en.shown{filter:none}
+@media (prefers-reduced-motion:reduce){body.quiz .en{transition:none}}
+
+.empty{color:var(--muted);padding:24px 0}
+.res-ch{font-size:.75rem;color:var(--accent);font-weight:600}
+@media (max-width:480px){.ch-head h2{font-size:1.65rem}.gform{font-size:1.25rem}}
+html:lang(ja) body{font-family:"IBM Plex Sans KR","Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif}
+html:lang(ja) .en,html:lang(ja) .core,html:lang(ja) .rules,html:lang(ja) .vnote,html:lang(ja) .forms td:first-child{font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic","IBM Plex Sans KR",sans-serif}
+html:lang(zh-CN) .en,html:lang(zh-CN) .core,html:lang(zh-CN) .rules,html:lang(zh-CN) .vnote,html:lang(zh-CN) .forms td:first-child{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei","IBM Plex Sans KR",sans-serif}
+.lang{font:inherit;font-size:.85rem;font-weight:500;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.lang:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <div class="brand"><h1>4급 1권 Study Guide</h1><span id="sub">문법 · 대화 어휘 · 확장 어휘</span></div>
+    <div class="tools">
+      <div class="search"><input id="q" type="search" placeholder="Search all chapters: 도록, 저렴하다, fluent…" aria-label="Search all chapters"></div>
+      <select class="lang" id="lang" aria-label="Language"><option value="en">English</option><option value="ja">日本語</option><option value="zh">中文</option><option value="tr">Türkçe</option></select>
+      <button class="toggle" id="quiz" aria-pressed="false">Hide English</button>
+      <button class="toggle" id="expand">Collapse grammar</button>
+    </div>
+    <nav class="chips" id="chips" role="tablist" aria-label="Chapters"></nav>
+  </div>
+</header>
+<main class="wrap" id="main"></main>
+<script src="guide-en.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
